@@ -1,0 +1,303 @@
+body,
+html {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1,
+h4 {
+  padding: 0px;
+  margin: 0px;
+}
+
+ol {
+  margin: 0px auto;
+  padding: 0px 21px;
+}
+
+/* ok */
+.titulo-interactiva {
+  font-size: 1.2em;
+  color: #009b7f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 67vh;
+  pointer-events: none;
+}
+
+
+.contendor-bienvenida {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: #dce5db;
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%2395ac92' fill-opacity='0.4' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E"); */
+  background-image: url(./assets/img/fondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* Imagenes */
+.responsive {
+  width: 100%;
+  height: fit-content;
+}
+
+.imagen-personaje {
+  background-image: url(./assets/img/imagenFondo.png);
+  width: 100vw;
+  height: 100vw;
+  background-position: center;
+  overflow: hidden;
+}
+
+.contenido-actividad-bienvenida {
+  background-image: url(./assets/img/imagenFondo.png);
+  width: 100vw;
+  height: 100vh;
+  background-position: 92%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: 151%;
+}
+
+.escena2 {
+  display:none;
+  background-image: url(./assets/img/imagenFondo.png);
+  width: 100vw;
+  height: 100vh;
+  background-position: 92%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: 151%;
+}
+
+
+
+
+
+/* css actividad nueva*/
+
+.contenedor-actividad {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 31vh;
+  align-items: center;
+  background: aliceblue;
+  width: 55vh;
+  float: right;
+  margin: 15% 15%;
+  padding: 23px;
+  box-shadow: -5px -7px 0px darkolivegreen;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.5em;
+  font-family: 'Calibri', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: #12584c;
+  padding: 0px 0px !important;
+  margin: 0px 0px !important;
+}
+
+
+
+.button {
+  width: 100%;
+  display: inline-block;
+  /*  outline: 1px solid #009b7f;
+    outline-offset: 2px; */
+  text-decoration: none;
+  text-align: center;
+  padding: 6px 0px;
+  border: solid 1px #004F72;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font: 18px Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #E5FFFF;
+  background: #009b7f;
+  -webkit-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  margin: 23px auto;
+  cursor: pointer
+}
+
+.button:hover {
+  width: 100%;
+  margin: 0px auto;
+  padding: 6px 0px;
+  border: solid 1px #004F72;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font: 18px Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #E5FFFF;
+  background-color: #009b7f;
+  background-image: -moz-linear-gradient(top, #009b7f 0%, #3b9c8a 100%);
+  background-image: -webkit-linear-gradient(top, #009b7f 0%, #3b9c8a 100%);
+  background-image: -o-linear-gradient(top, #009b7f 0%, #3b9c8a 100%);
+  background-image: -ms-linear-gradient(top, #009b7f 0%, #3b9c8a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3b9c8a', endColorstr='#3b9c8a', GradientType=0);
+  background-image: linear-gradient(top, #009b7f 0%, #3b9c8a 100%);
+  -webkit-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  margin: 23px auto;
+}
+
+#video-animacion {
+  filter: drop-shadow(2px 4px 4px #333);
+  border: 13px #2f92d8 groove;
+  border-radius: 28px 28px;
+  width: 84%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  z-index: 1;
+  align-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  /* padding: 0; */
+  width: 50vh;
+  /* display: grid; */
+  /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%); */
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+#videoMobile {
+  display: none
+}
+
+/* .modal-content::after{
+  position:absolute;
+  content:'X';
+  color: white;
+  float: right;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 13px;
+}  */
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -100px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -100px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 13px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+  #video {
+    display: none
+  }
+
+  #videoMobile {
+    display: block
+  }
+
+  #videoOthers {
+    display: none
+  }
+
+  .imagen-personaje {
+    background-image: url(./assets/animaciones/Personaje.gif);
+    width: 200px;
+    height: 375px;
+    background-position: right;
+    overflow: hidden;
+    background-size: 176%;
+    background-repeat: no-repeat;
+    margin: -49px;
+  }
+
+  .contenedor-actividad {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 71vh;
+    align-items: center;
+  }
+}
