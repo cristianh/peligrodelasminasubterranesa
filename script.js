@@ -92,6 +92,7 @@ function menuLateral(opcionMenu) {
             document.querySelector('.escena2').style.display='grid'
             document.querySelector('.contenedor-escena3').style.display='none'
             document.querySelector('.mineros-rescate').style.display='none'
+            document.querySelector('#tituloInteractiva').style.display='block'
 
             break;
         case 2:
