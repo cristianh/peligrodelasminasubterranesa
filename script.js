@@ -99,12 +99,14 @@ function menuLateral(opcionMenu) {
             document.querySelector('.contenido-actividad-bienvenida').style.backgroundImage='url(./assets/img/fondosupervivencia.png)'
             document.querySelector('.contenedor-escena3').style.display='block'
             document.querySelector('.mineros-rescate').style.display='none'
+            document.querySelector('#tituloInteractiva').style.display='none'
             break;
         case 3:
             document.querySelector('.escena2').style.display='none'
             document.querySelector('.contenedor-escena3').style.display='none'
             document.querySelector('.imagenescena-mineros-dormir').style.display='none'
             document.querySelector('.mineros-rescate').style.display='block'
+            document.querySelector('#tituloInteractiva').style.display='none'
         
             
 
