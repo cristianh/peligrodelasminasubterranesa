@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Entrevista</title>
+    <title>El peligro de las minas Subterraneas</title>
     <link rel="stylesheet" type="text/css" href="node_modules/animate.css/animate.min.css">
     <link rel="preload" href="styles.css" as="styles">
     <link rel="preload" href="script.js" as="script">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="./src/gsap.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zingtouch/1.0.6/zingtouch.min.js"
+        integrity="sha512-HmaXasRYOQJEXJWYwYCMcIA/XnPtW9WPvaBVWE2mQP6K31sRdcgaYUyB//P5540J4hFqMBcj6vkDEEGkwHkYdA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body onload="init()">
@@ -19,34 +23,353 @@
     <div style="position: absolute;top: -20px;right: 1px;z-index: 1;" class="animate__animated animate__fadeIn">
         <img src="./assets/img/TituloInteractiva.png" alt="logo: escuela nueva">
     </div>
+    <div class="botones-Menu">
+        <div style="position: absolute;bottom: 271px;left: -20px;z-index: 1;cursor:pointer" class="animate__animated animate__fadeIn" onclick="menuLateral(1)">
+        
+            <div id="btn1">
+    
+            </div>
+        </div>
+        <div style="position: absolute;bottom: 165px;left: -20px;z-index: 1;cursor:pointer" class="animate__animated animate__fadeIn" onclick="menuLateral(2)">
+            
+            <div id="btn2">
+    
+            </div>
+        </div>
+        <div style="position: absolute;bottom: 55px;left: -20px;z-index: 1;cursor:pointer" class="animate__animated animate__fadeIn" onclick="menuLateral(3)">
+           
+            <div id="btn3">
+    
+            </div>
+        </div>
+    </div>
+   
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
-           <!--  <span class="close">&times;</span> -->
-           
+            <!--  <span class="close">&times;</span> -->
+
         </div>
 
     </div>
     <div class="contendor-bienvenida">
         <div class="contenido-actividad-bienvenida">
 
-            <div class="contenedor-actividad animate__animated animate__fadeInRight animate__delay-1s">
+            <div class="escena-bienvenida">
+
+                <div class="contenedor-texto animate__animated animate__fadeInRight animate__delay-1s">
+                    <img src="./assets/img/mensaje.png" alt="logo: escuela nueva" class="responsive">
+                    <div style="width:50%;margin:0px auto">
+                        <div  class="button" onclick="cargarEsenaAccidente()">
+                            Siguiente
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="escena2">
+                <div>
+                    <div class="zona-derrumbe animate__animated animate__fadeIn">
+                        <p>El 5 de agosto de 2010, 33 mineros quedaron atrapados a 700 metros de profundidad después de que un derrumbe inutilizables la salida de la mina de San José al norte de Chile.</p>
+                    </div>
+                    <div class="zona-refugio animate__animated animate__fadeIn">
+                        <p>El refugio no contaba con condiciones de ventilación, aunque era seguro en caso de un derrumbre. La temperatura de la mina era de 35°C con un 85% de humedad.</p>
+                    </div>
+                    <div class="sonda-alimentacion animate__animated animate__fadeIn">
+                        <p>Tubos de 3 metros de largo por 11 centimetros de diámetro fueron usadas para:</p>
+
+                        <ul>
+                            <li>Enviar alimentos que aseguraron la supervivencia.</li>
+                            <li>Transportar colchones inflables.</li>
+                            <li>Enviar cámara fotografica de 7 centimetros para tomar fotos de lesiones.</li>
+                        </ul>
+                    </div>
+                    <div class="sondas animate__animated animate__fadeIn">
+                        <p>Se crearon 6 sondas las cuales permitieron llegar hasta la ubicación de los mineros para comunicarse con ellos y hacerles llegar agua y alimentos.</p>
+                    </div>
+                   
+                    <div class="profundidad animate__animated animate__fadeIn">
+                        <p>Los mineros se encontraban a una profundidad de casi el doble de la altura de la torre Eiffel.</p>
+                    </div>
+                </div>
+                <div class="imagen-accidente">
+                    <div class="sondas-animacion">
+
+                    </div>
+                    <div class="puntos-click-escena-accidente">
+                        <div class="click-opcion" id="opcion1-accidente" onclick="menuAccidente(1)">
+    
+                        </div>
+                        <div class="click-opcion" id="opcion2-accidente" onclick="menuAccidente(2)">
+    
+                        </div>
+                        <div class="click-opcion" id="opcion3-accidente" onclick="menuAccidente(3)">
+    
+                        </div>
+                        <div class="click-opcion" id="opcion4-accidente" onclick="menuAccidente(4)">
+    
+                        </div>
+                        <div class="click-opcion" id="opcion5-accidente" onclick="menuAccidente(5)">
+    
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <!-- TODO::Edite aca-->
+            <div class="contenedor-escena3">
+                <div class="caja-imagen-proteccion">
+                    <div class="proteccion-mineros animate__animated animate__fadeIn">
+
+                        <img src="./assets/img/proteccionMineros.svg" class="responsive-traje">
+                    </div>
+                    <div class="temperatura-mineros animate__animated animate__fadeIn">
+                        <h1>Temperatura 35°C</h1>
+                    </div>
+                    <div class="dormir-mineros animate__animated animate__fadeIn">
+                        <h1>¿Cómo Duermen?</h1>
+                        <p>Los mineros duermen en tres sectores diferentes para evitar el calor.</p>
+                    </div>
+                    <div class="comen-mineros animate__animated animate__fadeIn">
+                        <h1>¿Cómo comen?</h1>
+                        <p>Los mineros reciben alimentos sólidos por la pequeña sonda que los comunica con la
+                            superficie. Reciben alimentos deshidratados, conservas y gel especial preparado por
+                            nutricionistas que permiten reparar los tejidos e hidratar el organismo.</p>
+                    </div>
+                </div>
+                <div class="zonda-comida">
+                    <img id="imagen-zonda-comida" src="./assets/animaciones/comida.gif" alt="comida" style="height: -webkit-fill-available;">
+                </div>
+                <div class="puntos-click">
+                    <div class="click-opcion" id="opcion1">
+
+                    </div>
+                    <div class="click-opcion" id="opcion2">
+
+                    </div>
+                    <div class="click-opcion" id="opcion3">
+
+                    </div>
+                    <div class="click-opcion" id="opcion4">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+             <div class="imagenescena-mineros-dormir">
+
+            </div>
+            <div class="imagenescena-mineros-comer">
+
+            </div>
+            <div class="mineros-rescate">
+                <div class="maquina">
+                    <div class="contenedor-maquina">
+                        <div class="minero-maquina">
+
+                        </div>
+                        <div class="maquina-interna" onclick="animacionTaladro()">
+
+                        </div>
+                        <div class="mensaje-mineros-rescate">
+                            <p>Lograr realizar un túnel de 622 metros de profundidad y 37 cm de diámetro usando la
+                                <b>perforadora-Raise Bore</b> modelo <b>Strata 950</b> hasta llegar a la galería
+                                subterránea donde
+                                se encuentran los mineros.
+                            </p>
+                        </div>
+                        <div class="texto1-mesaje-fenix">
+                            Envia un rescatista minero hasta el fondo de la mina, seguido de un enfermero, otros tres
+                            socorristas mineros y otro enfermero, para ayudar a los mineros en su proceso de salida a la
+                            superficie. Ellos deben permanecer al interior de la mina hasta que salga el último minero.
+                            <div style="width:40%;margin:0px auto">
+                                <div class="button" onclick="envirAssistencia()">
+                                    Enviar
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mensaje-broca-rescate">
+                            <p>Sustituye la broca por una nueva que ampliara el ducto a 66cm de diámetro; suficiente
+                                para poder extraer a los mineros.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="taladro">
+                    <div class="pared1Taladro">
+
+                    </div>
+                    <div class="centro-taladro">
+
+                    </div>
+                    <div class="pared2Taladro">
+
+                    </div>
+                </div>
+                <div class="inferior-mineros">
+                    <div class="brocagrande" onclick="reverseAnimacionTaladro()">
+
+                    </div>
+                </div>
+                <div class="mensaje-fenix">
+
+                    <div class="texto2-mesaje-fenix">
+                        <div class="contenedor-descripcion-fenix">
+                            <div class="fenix-descripcion">
+                            </div>
+                            <div>
+                                <p>Diseñada por un equipo de 20 ingenieros espaciales en el centro de Investigaciones
+                                langley
+                                de la NASA, en Virginia, EE.UU.</p>
+                                <div>
+                                    <div style="width:80%;margin:0px auto">
+                                        <div id="boton-siguiente-rescate" class="button" onclick="siguienteRescateFexi()">
+                                            Siguiente
+                                        </div>
+                                    </div>
+    
+                                </div>
+
+                            </div>
+
+                        </div>
+                       
+
+                    </div>
+
+                    <div class="texto3-mesaje-fenix">
+                        <p>Envia una cápsula Fénix para que recorra un trayecto de 622 metros para evacuar a la
+                            superficie a los mineros atrapados.
+                            <b>Ten cuidado con el tiempo que tienes para lograrlo.</b>
+                        </p>
+                        <div style="width:40%;margin:0px auto">
+                            <div id="boton-siguiente-rescate" class="button" onclick="cargarJuego()">
+                                Jugar
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="juego">
+                <div class="contenedor-juego">
+                    <div class="mensaje-final-juego">
+                        <h1>!Muy bien¡</h1>
+                        <p>Lograste sacar a todos los mineros</p>
+                        <p><b>Tu Tiempo:</b></p>
+                    </div>
+                    <div class="torre-taladro">
+
+                    </div>
+                    <div class="mineros-top">
+
+                    </div>
+                    <div class="mensaje-actividad">
+                        <p>Haz click sobre la polea y comienza a girar para bajar la cápsulta Fénix hasta la mina.</p>
+                    </div>
+                    <div class="MensajeRescate2">
+
+                    </div>
+
+                    <div class="descripcion-minero-rescado">
+                        <div class="texto-descripcion">
+
+                        </div>
+                        <div class="imagen-minero-juego">
+                            <div class="contador-mineros-rescatados">
+                                x
+                            </div>
+                        </div>
+                    </div>
+                    <div id="temporizador">
+                        <div>
+                            <span id="indicador-tiempo"><b>Tiempo:</b></span><br>
+                            <h6 style="color:red; font-size:18px">00:00:00</h6>
+
+                        </div>
+                    </div>
+                    <div>
+                        <div id="wrapper">
+                            <div id="rotate-container">
+                                <div id="rotatable" class="rueda">
+                                    <div id="interaction" class="rueda-dragable">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="output">> </div>
+                        </div>
+
+
+                        <div id="interaction2" style=""></div>
+
+
+                    </div>
+                    <div class="parte-lazo">
+                        <div class="parte-lazo-polea">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-paredes">
+                    <div class="pared1">
+
+                    </div>
+                    <div class="canasta">
+
+                    </div>
+                    <div class="cuerda">
+                        <div class="figura-cuerda">
+
+                        </div>
+                    </div>
+                    <div class="pared2">
+
+                    </div>
+                </div>
+                <div class="contenedor-mineros">
+                    <div class="mineros-juego">
+                        <div>
+                            <div class="minero1"></div>
+                            <div class="minero2"></div>
+                            <div class="minero3"></div>
+                        </div>
+                        <div>
+                            <div class="MensajeRescate1">
+
+                            </div>
+
+                        </div>
+                        <div>
+                            <div class="minero4"></div>
+                            <div class="minero5"></div>
+                            <div class="minero6"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="contenedor-actividad animate__animated animate__fadeInRight animate__delay-1s">
                 <img src="./assets/img/mensaje.png" alt="logo: escuela nueva" class="responsive">
                 <div style="width:50%;margin:0px auto">
                     <div  class="button">
                         Siguiente
                     </div>
                 </div>
-            </div>
-            
-        </div>
+            </div> -->
 
-        <div class="escena2">
-            
         </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="Draggable.min.js"></script>
 </body>
 
 </html>

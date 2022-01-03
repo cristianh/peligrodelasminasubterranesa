@@ -1,7 +1,14 @@
+:root {
+  --animacion-tamano-cuerda: 34px;
+  --animacion-tamano-cuerda2: 10px;
+  --animacion-cuerda: -34px;
+}
+
 body,
 html {
   padding: 0px;
   margin: 0px;
+  font-family: 'Calibri', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h1,
@@ -47,7 +54,12 @@ ol {
 /* Imagenes */
 .responsive {
   width: 100%;
-  height: fit-content;
+  height: auto;
+}
+
+.responsive-traje {
+  width: 80%;
+  height: max-content;
 }
 
 .imagen-personaje {
@@ -58,29 +70,788 @@ ol {
   overflow: hidden;
 }
 
+.contenedor-texto {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 31vh;
+  align-items: center;
+  background: aliceblue;
+  width: 55vh;
+  float: right;
+  margin: 15% 15%;
+  padding: 23px;
+  box-shadow: -5px -7px 0px darkolivegreen;
+}
+
 .contenido-actividad-bienvenida {
   background-image: url(./assets/img/imagenFondo.png);
+  /*  background-image: url(./assets/img/fondosupervivencia.png); */
   width: 100vw;
   height: 100vh;
-  background-position: 92%;
+  /* background-position: 92%; */
+  background-position: center center;
   background-repeat: no-repeat;
-  overflow: hidden;
-  background-size: 151%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /* background-size: 151%; */
+  background-size: 100% 100%;
 }
 
 .escena2 {
-  display:none;
-  background-image: url(./assets/img/imagenFondo.png);
+  background-image: url(./assets/img/fondoRescate.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  grid-template-columns: 1fr 2fr;
   width: 100vw;
   height: 100vh;
-  background-position: 92%;
-  background-repeat: no-repeat;
   overflow: hidden;
-  background-size: 151%;
+  display:none
+}
+
+
+.imagen-accidente {
+  background-image: url(./assets/img/imagen-accidente.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto
+}
+
+.contenedor-escena3 {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+
+}
+
+
+.mineros-rescate {
+  width: 100vw;
+  height: auto;
+  background-color: rgb(205, 202, 207);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  top: 0px;
+  display: none
+}
+
+.maquina {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-image: url(./assets/img/montañasfondoCompleto.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+}
+
+.contenedor-maquina {
+  width: 50vw;
+  height: auto;
+  /*   background-color: lime; */
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.minero-maquina {
+  width: 10vw;
+  height: 28vh;
+  background-image: url(./assets/img/minero-maquina.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 32%;
+  margin-left: 74%;
+  margin-top: 26px;
+}
+
+.brocagrande {
+  display: none;
+  width: 10vw;
+  height: 28vh;
+  background-image: url('./assets/img/brocaGrande.svg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 50%;
+  position: relative;
+  top: -110px;
+  left: 45%;
+  animation: animacionBrocaGrande 4s infinite;
+  animation-fill-mode: both;
+  cursor: pointer
+}
+
+.brocagrande:hover::before {
+  content: 'Click en la broca';
+  width: 150px;
+  height: 100px;
+  color: white;
+  position: absolute;
+  left: 12px;
+  bottom: 0px
 }
 
 
 
+.maquina-interna {
+  width: 10vw;
+  height: 100%;
+  background-image: url('./assets/img/EditandoBroca.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100%;
+  margin-top: 3%;
+  z-index: 99;
+  cursor: pointer
+}
+
+.taladro {
+  width: 100vw;
+  height: 1200px;
+  /* border: 5px solid orange; */
+  background-color: #493623;
+  position: relative;
+  bottom: 0px;
+  display: grid;
+  grid-template-columns: 15fr 1fr 15fr;
+}
+
+.pared1Taladro {
+  background-image: url('./assets/img/tierra.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;
+  background-color: #4b4b4b;
+  width: auto;
+  height: 100%;
+}
+
+.centro-taladro {
+  width: auto;
+  height: 0%;
+  background-color: #2E231F;
+  background-image: url('./assets/img/taladro.svg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  overflow: hidden
+}
+
+
+
+.pared2Taladro {
+  background-image: url('./assets/img/tierra.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;
+  background-color: #4b4b4b;
+  width: auto;
+  height: 100%;
+}
+
+.inferior-mineros {
+  width: 100vw;
+  height: 30vh;
+  background-color: #2C221F;
+  background-image: url('./assets/img/inferior_rescate.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: auto;
+
+  position: relative;
+  bottom: 0px
+}
+
+
+/* JUEGO */
+
+.juego {
+  width: 100vw;
+  height: 100vh;
+  display: none
+}
+
+.contenedor-juego {
+  padding: 23px;
+  display: grid;
+  background-color: white;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: 1/6fr 3fr;
+  background-image: url(./assets/img/montañasfondoCompleto.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+}
+
+.mensaje-fenix {
+  width: 38vw;
+  height: 60vh;
+  background-color: #EAEDC4;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: absolute;
+  bottom: 21vh;
+  right: 76px;
+  display: none
+}
+
+.fenix-descripcion {
+  width: 20vw;
+  height: 51vh;
+  background-image: url(./assets/img/capsulafenix.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-size: 86%;
+}
+
+.texto1-mesaje-fenix {
+  display: none;
+  padding: 12px;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 50vh;
+  height: 40vh;
+  text-align: justify;
+  font-size: 1.1em !important;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  z-index: 9999;
+  border-radius: 13px;
+  background-color: white;
+  border: 1px solid rgb(91, 168, 91);
+  box-shadow: 5px 7px 0px darkolivegreen;
+}
+
+.texto3-mesaje-fenix {
+  padding: 43px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: 0px auto;
+  height: -webkit-fill-available;
+  text-align: justify;
+  font-size: 1.2em !important;
+
+}
+
+.texto2-mesaje-fenix {
+  padding: 43px;
+  margin: 0px auto;
+  place-items: center;
+  height: -webkit-fill-available;
+  text-align: justify;
+  font-size: 1.2em !important;
+  width: auto;
+
+}
+
+
+.contenedor-descripcion-fenix {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  place-content: center;
+}
+
+.contenedor-mineros {
+  width: 100%;
+  position: relative;
+  top: -319px;
+}
+
+.contenedor-paredes {
+  width: 100%;
+  height: 100vh;
+  background-color: #2F2521;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+  flex-grow: 3;
+}
+
+.pared1 {
+  width: 48%;
+  height: 50vh;
+  background-color: rgb(100, 100, 100);
+  background-image: url('./assets/img/tierra2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%
+}
+
+.minero1 {
+  width: 7vh;
+  height: 7vh;
+  background-image: url('./assets/img/M1.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain
+}
+
+.minero2 {
+  width: 7vh;
+  height: 7vh;
+  background-image: url('./assets/img/M2.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain
+}
+
+.minero3 {
+  width: 6vh;
+  height: 6vh;
+  background-image: url('./assets/img/M3.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain
+}
+
+.minero4 {
+  width: 7vh;
+  height: 7vh;
+  background-image: url('./assets/img/M4.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain
+}
+
+.minero5 {
+  width: 7vh;
+  height: 7vh;
+  background-image: url('./assets/img/M5.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain
+}
+
+.minero6 {
+  width: 7vh;
+  height: 7vh;
+  background-image: url('./assets/img/M6.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain
+}
+
+.MensajeRescate1 {
+  visibility: hidden;
+  width: 35vh;
+  height: 13vh;
+  background-image: url(./assets/img/mensaje1-01.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto;
+  position: absolute;
+  top: -65px;
+  right: 394px;
+  cursor: pointer
+}
+
+.MensajeRescate2 {
+  visibility: hidden;
+  width: 35vh;
+  height: 13vh;
+  background-image: url(./assets/img/mensaje2-02.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto;
+  position: absolute;
+  top: 95px;
+  right: 394px;
+  cursor: pointer;
+  z-index: 99999
+}
+
+.mensaje-final-juego {
+  display: none;
+  background-color: white;
+  padding: 23px 23px;
+  width: 35vh;
+  height: 24vh;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  margin: 0px auto;
+  cursor: pointer;
+  z-index: 99999;
+  border-radius: 23px;
+  box-shadow: -5px -7px 0px darkolivegreen;
+}
+
+.canasta {
+  width: 2%;
+  height: 14%;
+  position: relative;
+  top: 10px;
+  display: inline-block;
+  z-index: 900;
+  background-image: url('./assets/img/capsula.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+/* .canasta::before {
+  content: '';
+  width: 4px;
+  height: var(--animacion-tamano-cuerda);
+  background-color: black;
+  position: absolute;
+  top: var(--animacion-cuerda);
+  left: 50%;
+} */
+
+
+.cuerda {
+  position: absolute;
+  width: 10%;
+  height: var(--animacion-tamano-cuerda2);
+  left: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  pointer-events: none;
+}
+
+.figura-cuerda {
+  width: 4px;
+  height: 100%;
+  background-color: black;
+  margin: 0px auto;
+}
+
+
+.pared2 {
+  width: 48%;
+  height: 50vh;
+  background-color: rgb(100, 100, 100);
+  background-image: url('./assets/img/tierra2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover
+}
+
+.mineros-juego {
+  width: 35vh;
+  height: 20vh;
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0px auto;
+  grid-gap: 26px;
+}
+
+.mineros-juego div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.rueda {
+  width: 10vh;
+  height: 10vh;
+  background-color: silver;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.rueda-dragable {
+  content: ',';
+  /*  background-color: red; */
+  width: 2vh;
+  height: 2vh;
+  border-radius: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.torre-taladro {
+  width: 23vh;
+  height: 23vh;
+  background-image: url(./assets/img/torreTaladro.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  position: absolute;
+  left: 82vh;
+  z-index: 9;
+  top: 12vh;
+  margin: 0px auto;
+  pointer-events: none;
+}
+
+.contador-mineros-rescatados {
+  position: relative;
+  right: -23px;
+  font-weight: bold;
+}
+
+.descripcion-minero-rescado {
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  width: 68vh;
+  height: 18vh;
+  margin: 0px auto;
+  position: absolute;
+  top: 11%;
+  border-radius: 23px;
+  border: 1px solid rgb(91, 168, 91);
+  box-shadow: 3px 4px 0px darkolivegreen;
+  background-color: white
+}
+
+.imagen-minero-juego {
+  width: 5vh;
+  height: 12vh;
+  background-image: url('./assets/img/minero.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin: 0px auto;
+  text-align: left;
+}
+
+.texto-descripcion {
+  width: 44vh;
+  height: 18vh;
+  margin: 0px auto;
+  text-align: left
+}
+
+
+
+
+/**/
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer
+}
+
+#output {
+  background-color: #3B3B3B;
+  width: 100%;
+  display: none;
+  min-height: 30px;
+  padding: 10px;
+  font-size: 0.8em;
+  color: white;
+}
+
+#rotate-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+
+
+#rotatable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 114px;
+  height: 114px;
+  font-size: 2rem;
+  pointer-events: all;
+  z-index: 999
+}
+
+.parte-lazo-polea {
+  width: 4px;
+  height: 5vh;
+  background-color: black;
+  margin: 0px auto;
+}
+
+.mineros-top {
+  width: 19vh;
+  height: 19vh;
+  margin: 0px auto;
+  background-image: url('./assets/img/mineros.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  position: absolute;
+  left: 45%;
+  top: 21vh;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+
+.parte-lazo {
+  width: auto;
+  height: 10px
+}
+
+.mensaje-mineros-rescate {
+  width: 30%;
+  height: 5%;
+  margin-top: 3%;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  right: 100px;
+  padding: 12px;
+  border-radius: 13px;
+  background-color: white;
+  border: 1px solid rgb(91, 168, 91);
+  box-shadow: 5px 7px 0px darkolivegreen;
+}
+
+.mensaje-broca-rescate {
+  /*display:flex; TODO:Aca mensaje rescatae*/
+  display: none;
+  width: 30%;
+  height: 5%;
+  top: 73%;
+  text-align: justify;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 35%;
+  padding: 12px;
+  border-radius: 13px;
+  background-color: white;
+  border: 1px solid rgb(91, 168, 91);
+  box-shadow: 5px 7px 0px darkolivegreen;
+  z-index: 9999
+}
+
+#btn3 {
+  width: 30vh;
+  height: 20vh;
+  background-image: url(./assets/img/Tab3.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 50%
+}
+
+#btn3:hover {
+  width: 50vh;
+  height: 20vh;
+  background-image: url(./assets/img/rescateBtn.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 90%
+}
+
+#btn2 {
+  width: 30vh;
+  height: 20vh;
+  background-image: url(./assets/img/Tab2.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 50%
+}
+
+#btn2:hover {
+  width: 50vh;
+  height: 20vh;
+  background-image: url(./assets/img/rescateBtn2.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 90%
+}
+
+#btn1 {
+  width: 30vh;
+  height: 20vh;
+  background-image: url(./assets/img/Tab1.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 50%
+}
+
+#btn1:hover {
+  width: 50vh;
+  height: 20vh;
+  background-image: url(./assets/img/rescateBtn3.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 90%
+}
+
+.zonda-comida {
+  display: none;
+  width: 100px;
+  height: 70vh;
+  position: absolute;
+  top: -18px;
+  right: 30%;
+  /* background-image: url(./assets/animaciones/comida.gif);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain */
+}
+
+.mensaje-actividad {
+  width: 30%;
+  position: absolute;
+  right: 100px;
+  border-radius: 23px;
+  border: 1px solid rgb(91, 168, 91);
+  box-shadow: 5px 7px 0px darkolivegreen;
+  background-color: white
+}
+
+#rotatable::before {
+  content: '';
+  background-image: url('./assets/img/circulo-rueda.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto;
+  display: inline-block;
+
+  width: 89%;
+  height: 89%;
+  background-color: white;
+  border-radius: 100%;
+  border: 1px solid black;
+  overflow: hidden;
+  text-align: center;
+  pointer-events: none;
+}
+
+#interaction {
+  position: fixed;
+  top: 3%;
+  width: 2vh;
+  height: 2vh;
+  z-index: 9999000;
+}
 
 
 /* css actividad nueva*/
@@ -98,6 +869,383 @@ ol {
   box-shadow: -5px -7px 0px darkolivegreen;
 }
 
+.escena-bienvenida {
+  display: block
+}
+
+.proteccion-mineros {
+  text-align: center;
+  background: aliceblue;
+  width: 20vw;
+  height: 60vh;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: relative;
+  left: 25%;
+  top: 12%;
+  padding: 12px 12px;
+  display: none
+}
+
+.puntos-click {
+  width: 100%;
+  height: 100vh;
+  display: inline-block;
+  position: relative;
+  top: -100%;
+  left: 50%
+}
+
+.puntos-click-escena-accidente {
+  width: 100%;
+  height: 100vh;
+  display: inline-block;
+  position: relative;
+  top: 0px;
+  left: 14%;
+}
+
+
+#opcion1-accidente {
+  position: relative;
+  top: 65%;
+  left: 100px
+}
+
+#opcion2-accidente {
+  position: relative;
+  top: 81%;
+  left: 212px;
+}
+
+#opcion3-accidente {
+  position: relative;
+  top: 68%;
+  left: 207px;
+}
+
+
+
+
+
+#opcion4-accidente {
+  position: relative;
+  top: 51%;
+  left: 228px;
+}
+
+
+
+#opcion5-accidente {
+  position: relative;
+  top: 57%;
+  left: 297px;
+}
+
+.botones-Menu {
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  z-index: 1;
+  cursor: pointer;
+  width: auto;
+  height: fit-content;
+  display: none;
+}
+
+.imagenescena-mineros-dormir {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./assets/img/minerosdormir.png);
+  background-repeat: no-repeat;
+  background-size: initial;
+  background-position: 89% 67%;
+  position: absolute;
+  top: 0px;
+  display: none;
+  pointer-events: none;
+}
+
+.imagenescena-mineros-comer {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./assets/img/comer.png);
+  background-repeat: no-repeat;
+  background-size: initial;
+  background-position: center center;
+  position: relative;
+  top: -88vh;
+  display: none;
+  pointer-events: none;
+  right: -118px;
+}
+
+.caja-imagen-proteccion {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  top: 0%;
+}
+
+.click-opcion {
+  width: 2vw;
+  height: 4vh;
+  background-image: url(./assets/img/clickOpcion.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  display: inline-block;
+  cursor: pointer;
+  animation: animacionPuntosClick 0.9s infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: both;
+  border-radius: 100%;
+
+}
+
+.proteccion-mineros ::before {
+  content: url(./assets/img/cerrar.png);
+  width: 6vh;
+  height: 6vh;
+  position: relative;
+  top: -30vw;
+  left: 235px;
+  cursor: pointer;
+}
+
+
+.temperatura-mineros::before {
+  content: url(./assets/img/cerrar.png);
+  width: 6vh;
+  height: 6vh;
+  position: relative;
+  top: -2vw;
+  left: 248px;
+  cursor: pointer;
+}
+
+.dormir-mineros::before {
+  content: url(./assets/img/cerrar.png);
+  width: 6vh;
+  height: 6vh;
+  position: relative;
+  top: -2vw;
+  left: 248px;
+  cursor: pointer;
+}
+
+.zona-derrumbe {
+  text-align: justify;
+  background: aliceblue;
+  width: 30vw;
+  height: 28vh;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: relative;
+  left: 25%;
+  top: 12%;
+  padding: 12px 12px;
+  display: block;
+  font-size: 1.2em;
+  display: none
+}
+
+.zona-derrumbe::before {
+  content: url(./assets/img/cerrar.png);
+  width: 6vh;
+  height: 2vh;
+  position: relative;
+  top: -2vw;
+  right: -100%;
+  cursor: pointer;
+}
+
+.zona-refugio {
+  text-align: justify;
+  background: aliceblue;
+  width: 30vw;
+  height: 25vh;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: relative;
+  left: 25%;
+  top: 12%;
+  padding: 12px 12px;
+  display: block;
+  font-size: 1.2em;
+  display: none
+}
+
+.zona-refugio::before {
+  content: url(./assets/img/cerrar.png);
+  width: 6vh;
+  height: 2vh;
+  position: relative;
+  top: -2vw;
+  right: -100%;
+  cursor: pointer;
+}
+
+
+
+.profundidad {
+  text-align: justify;
+  background: aliceblue;
+  width: 30vw;
+  height: 25vh;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: relative;
+  left: 25%;
+  top: 12%;
+  padding: 12px 12px;
+  display: block;
+  font-size: 1.2em;
+  display: none
+}
+
+.profundidad::before {
+  content: url(./assets/img/cerrar.png);
+  width: 6vh;
+  height: 2vh;
+  position: relative;
+  top: -2vw;
+  right: -100%;
+  cursor: pointer;
+}
+
+
+.sondas-animacion {
+  width: 11vw;
+  height: 40vh;
+  background-image: url(./assets/img/sondas-aniamcion.png);
+  background-repeat: no-repeat;
+  background-size: initial;
+  background-position: 100%;
+  position: absolute;
+  bottom: 15%;
+  right: 31%;
+  display: none
+    /*   animation:animacionsondas 2s infinite */
+}
+
+
+
+.sonda-alimentacion {
+  text-align: justify;
+  background: aliceblue;
+  width: 30vw;
+  height: 35vh;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: relative;
+  left: 25%;
+  top: 12%;
+  padding: 12px 12px;
+  display: block;
+  font-size: 1.2em;
+  display: none
+}
+
+.sonda-alimentacion::before {
+  content: url(./assets/img/cerrar.png);
+  width: 6vh;
+  height: 2vh;
+  position: relative;
+  top: -2vw;
+  right: -100%;
+  cursor: pointer;
+}
+
+.sondas {
+  text-align: justify;
+  background: aliceblue;
+  width: 25vw;
+  height: 35vh;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: relative;
+  left: 25%;
+  top: 12%;
+  padding: 12px 12px;
+  display: block;
+  font-size: 1.2em;
+  display: none
+}
+
+.sondas::before {
+  content: url(./assets/img/cerrar.png);
+  width: 6vh;
+  height: 2vh;
+  position: relative;
+  top: -2vw;
+  right: -100%;
+  cursor: pointer;
+}
+
+.temperatura-mineros {
+  text-align: center;
+  background: aliceblue;
+  width: 40vw;
+  height: 20vh;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: relative;
+  left: 10%;
+  top: 12%;
+  padding: 12px 12px;
+  display: none
+}
+
+.dormir-mineros {
+  text-align: center;
+  background: aliceblue;
+  width: 40vw;
+  height: 20vh;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: relative;
+  left: 10%;
+  top: 12%;
+  padding: 12px 12px;
+  display: none
+}
+
+.comen-mineros {
+  text-align: center;
+  background: aliceblue;
+  width: 40vw;
+  height: 24vh;
+  box-shadow: -5px -7px 0px darkolivegreen;
+  position: relative;
+  left: 10%;
+  top: 12%;
+  padding: 12px 12px;
+  display: none
+}
+
+#opcion1 {
+  position: relative;
+  top: 65%;
+  left: 45px;
+}
+
+
+#opcion2 {
+  position: relative;
+  top: 43%;
+  left: 90px;
+}
+
+#opcion3 {
+  position: relative;
+  top: 32%;
+  left: 160px;
+}
+
+#opcion4 {
+  position: relative;
+  top: 65%;
+  left: 346px;
+}
+
+.click-opcion:hover {
+  background-image: url(./assets/img/clickOpcionOver.png);
+  filter: brightness(1.2)
+}
+
 
 h1,
 h2,
@@ -105,7 +1253,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 1.5em;
+  font-size: 2.3em;
   font-family: 'Calibri', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
@@ -222,6 +1370,76 @@ h6 {
 }  */
 
 /* Add Animation */
+
+@keyframes animacionPuntosClick {
+
+  100% {
+    transform: scale(1.5, 1.5);
+    transform-origin: 50% 50%;
+    filter: drop-shadow(0px 2px 0.6px rgb(33, 92, 33));
+    border: 1px double #147014;
+  }
+
+  0% {
+    transform: scale(1, 1);
+    transform-origin: 50% 50%;
+    filter: drop-shadow(0px 2px 8px rgb(65, 118, 65));
+    border: 0px double #147014;
+  }
+}
+
+
+@keyframes animacionBrocaGrande {
+  100% {
+    filter: drop-shadow(0px 2px 0.6px rgb(33, 92, 33));
+  }
+
+  0% {
+    filter: drop-shadow(0px 2px 8px rgb(94, 206, 94));
+  }
+}
+
+@-webkit-keyframes animatataladro {
+  from {
+    height: 0%;
+
+  }
+
+  to {
+    height: 100%;
+
+  }
+}
+
+
+@-webkit-keyframes animatataladroReverse {
+  from {
+    height: 100%;
+
+  }
+
+  to {
+    height: 0%;
+
+  }
+}
+
+@keyframes animacionsondas {
+  100% {
+    opacity: 1;
+    transform-origin: 0% 50%;
+    filter: drop-shadow(0px 2px 0.6px rgb(108, 180, 108));
+  }
+
+  50% {
+    opacity: 0;
+
+    transform-origin: 00% 50%;
+    filter: drop-shadow(0px 2px 0.6px rgb(33, 92, 33));
+
+  }
+}
+
 @-webkit-keyframes animatetop {
   from {
     top: -100px;
