@@ -92,7 +92,8 @@ function menuLateral(opcionMenu) {
             document.querySelector('.escena2').style.display='grid'
             document.querySelector('.contenedor-escena3').style.display='none'
             document.querySelector('.mineros-rescate').style.display='none'
-            document.querySelector('#tituloInteractiva').style.display='block'
+            document.querySelector('.dormir-mineros').style.display='none'
+            document.querySelector('#tituloInteractiva').style.display='none'
 
             break;
         case 2:
@@ -108,6 +109,7 @@ function menuLateral(opcionMenu) {
             document.querySelector('.imagenescena-mineros-dormir').style.display='none'
             document.querySelector('.mineros-rescate').style.display='block'
             document.querySelector('#tituloInteractiva').style.display='none'
+            document.querySelector('.mensaje-mineros-rescate').style.display='block'
         
             
 
@@ -120,10 +122,26 @@ function menuLateral(opcionMenu) {
 }
 
 function cargarEsenaAccidente(){
+    document.querySelector('#tituloInteractiva').style.display='none'
     document.querySelector('.contenido-actividad-bienvenida').style.backgroundImage='none';
     document.querySelector('.contenedor-texto').style.display='none';
     document.querySelector('.botones-Menu').style.display='block';
     document.querySelector('.escena2').style.display='grid';
+    tippy(`#opcion1-accidente`, {
+        content: 'Zona del derrumbe',
+        theme: 'material',
+
+    });
+    tippy(`#opcion2-accidente`, {
+        content: 'Refugio',
+        theme: 'material',
+
+    });
+    tippy(`#opcion3-accidente`, {
+        content: 'Sonda de alimentación',
+        theme: 'material',
+
+    });
     /* document.querySelector('.contenido-actividad-bienvenida').style.backgroundImage='url(./assets/img/imagenFondo.png)'; */
 }
 
@@ -372,37 +390,60 @@ function ocultarMineros() {
 function animacionTaladro() {
     let taladro = document.querySelector('.centro-taladro')
     let contenedorMinerosRescate = document.querySelector('.mineros-rescate')
+    document.querySelector('.mensaje-mineros-rescate').style.display='none'
     /*  taladro.style.animation='animatataladro 5s ease-in'
      taladro.style.animationDelay='.4s'
      taladro.style.animationFillMode='forwards' */
-    animacionGaspBroca = gsap.to(taladro, {
-        height: 1201,
-        duration: 5, ease: Linear.easeIn, onComplete: () => {
-            document.querySelector('.brocagrande').style.display = 'block'
-        }
-    });
+     let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (!isMobile) {
+        animacionGaspBroca = gsap.to(taladro, {
+            height: 1201,
+            duration: 5, ease: Linear.easeIn, onComplete: () => {
+                document.querySelector('.brocagrande').style.display = 'block'
+            }
+        });
+        animacionGaspTaladro = gsap.to(contenedorMinerosRescate, {
+            top: -1090,
+            duration: 5, ease: Linear.easeIn, onComplete: () => {
+                document.querySelector('.mensaje-broca-rescate').style.display = 'flex'
+                document.querySelector('.brocagrande').addEventListener('click', reverseAnimacionTaladro, false)
+            }
+        });
+    }else{
+        animacionGaspBroca = gsap.to(taladro, {
+            height: 1200,
+            duration: 6, ease: Linear.easeIn, onComplete: () => {
+                document.querySelector('.brocagrande').style.display = 'block'
+                document.querySelector('.mensaje-broca-rescate').style.display = 'flex'
+            }
+        });
+        animacionGaspTaladro = gsap.to(contenedorMinerosRescate, {
+            top: -1192,
+            duration: 6, ease: Linear.easeIn, onComplete: () => {
+                
+                document.querySelector('.brocagrande').addEventListener('click', reverseAnimacionTaladro, false)
+            }
+        });
+    }
+  
 
-    animacionGaspTaladro = gsap.to(contenedorMinerosRescate, {
-        top: -937,
-        duration: 5, ease: Linear.easeIn, onComplete: () => {
-            document.querySelector('.mensaje-broca-rescate').style.display = 'flex'
-            document.querySelector('.brocagrande').addEventListener('click', reverseAnimacionTaladro, false)
-        }
-    });
+  
 }
 
 function reverseAnimacionTaladro() {
     document.querySelector('.brocagrande').style.visibility = 'hidden'
     document.querySelector('.mensaje-broca-rescate').style.display = 'none'
+    
 
     document.querySelector('.centro-taladro').style.backgroundImage = "none"
     document.querySelector('.taladro').style.gridTemplateColumns = '11fr 1fr 11fr';
     document.querySelector('.centro-taladro').style.backgroundImage = "url('./assets/img/taladro2.svg')"
-    animacionGaspTaladro.reverse().eventCallback("onReverseComplete", () => {
+    animacionGaspTaladro.reverse()
+    animacionGaspBroca.reverse().eventCallback("onReverseComplete", () => {
         document.querySelector('.centro-taladro').style.backgroundImage = "url('./assets/img/zonda-fenix.svg')"
         document.querySelector('.texto1-mesaje-fenix').style.display = 'flex'
+        
     });
-    animacionGaspBroca.reverse()
     animacionGaspTaladro.addEventListener("transitionend", () => {
 
     });
@@ -416,10 +457,10 @@ function reverseAnimacionTaladro() {
 
 function envirAssistencia() {
     document.querySelector('.texto1-mesaje-fenix').style.display = 'none'
-    animacionGaspBroca.play()
-    animacionGaspTaladro.play().eventCallback("onComplete", () => {
+    animacionGaspBroca.play().eventCallback("onComplete", () => {
         document.querySelector('.mensaje-fenix').style.display = 'block'
     });
+    animacionGaspTaladro.play()
 }
 
 function siguienteRescateFexi() {

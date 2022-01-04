@@ -14,36 +14,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zingtouch/1.0.6/zingtouch.min.js"
         integrity="sha512-HmaXasRYOQJEXJWYwYCMcIA/XnPtW9WPvaBVWE2mQP6K31sRdcgaYUyB//P5540J4hFqMBcj6vkDEEGkwHkYdA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
 </head>
 
 <body onload="init()">
     <div style="position: absolute;top: 0px;z-index: 1;">
         <img src="./assets/Img/logo.png" alt="logo: escuela nueva">
     </div>
-    <div id="tituloInteractiva" style="position: absolute;top: -20px;right: 1px;z-index: 1;" class="animate__animated animate__fadeIn">
-        <img src="./assets/img/TituloInteractiva.png" alt="logo: escuela nueva">
+    <div id="tituloInteractiva" style="position: absolute;top: -20px;right: 1px;z-index: 1;"
+        class="animate__animated animate__fadeIn">
+        <img src="./assets/img/TituloInteractiva.png" class="responsive" alt="logo: escuela nueva">
     </div>
     <div class="botones-Menu">
-        <div style="position: absolute;bottom: 271px;left: -20px;z-index: 1;cursor:pointer" class="animate__animated animate__fadeIn" onclick="menuLateral(1)">
-        
+        <div class="animate__animated animate__fadeIn" onclick="menuLateral(1)">
+
             <div id="btn1">
-    
+
             </div>
         </div>
-        <div style="position: absolute;bottom: 165px;left: -20px;z-index: 1;cursor:pointer" class="animate__animated animate__fadeIn" onclick="menuLateral(2)">
-            
+        <div class="animate__animated animate__fadeIn" onclick="menuLateral(2)">
+
             <div id="btn2">
-    
+
             </div>
         </div>
-        <div style="position: absolute;bottom: 55px;left: -20px;z-index: 1;cursor:pointer" class="animate__animated animate__fadeIn" onclick="menuLateral(3)">
-           
+        <div class="animate__animated animate__fadeIn" onclick="menuLateral(3)">
+
             <div id="btn3">
-    
+
             </div>
         </div>
     </div>
-   
+
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
@@ -61,7 +65,7 @@
                 <div class="contenedor-texto animate__animated animate__fadeInRight animate__delay-1s">
                     <img src="./assets/img/mensaje.png" alt="logo: escuela nueva" class="responsive">
                     <div style="width:50%;margin:0px auto">
-                        <div  class="button" onclick="cargarEsenaAccidente()">
+                        <div class="button" onclick="cargarEsenaAccidente()">
                             Siguiente
                         </div>
                     </div>
@@ -70,10 +74,12 @@
             <div class="escena2">
                 <div>
                     <div class="zona-derrumbe animate__animated animate__fadeIn">
-                        <p>El 5 de agosto de 2010, 33 mineros quedaron atrapados a 700 metros de profundidad después de que un derrumbe inutilizables la salida de la mina de San José al norte de Chile.</p>
+                        <p>El 5 de agosto de 2010, 33 mineros quedaron atrapados a 700 metros de profundidad después de
+                            que un derrumbe inutilizables la salida de la mina de San José al norte de Chile.</p>
                     </div>
                     <div class="zona-refugio animate__animated animate__fadeIn">
-                        <p>El refugio no contaba con condiciones de ventilación, aunque era seguro en caso de un derrumbre. La temperatura de la mina era de 35°C con un 85% de humedad.</p>
+                        <p>El refugio no contaba con condiciones de ventilación, aunque era seguro en caso de un
+                            derrumbre. La temperatura de la mina era de 35°C con un 85% de humedad.</p>
                     </div>
                     <div class="sonda-alimentacion animate__animated animate__fadeIn">
                         <p>Tubos de 3 metros de largo por 11 centimetros de diámetro fueron usadas para:</p>
@@ -85,11 +91,13 @@
                         </ul>
                     </div>
                     <div class="sondas animate__animated animate__fadeIn">
-                        <p>Se crearon 6 sondas las cuales permitieron llegar hasta la ubicación de los mineros para comunicarse con ellos y hacerles llegar agua y alimentos.</p>
+                        <p>Se crearon 6 sondas las cuales permitieron llegar hasta la ubicación de los mineros para
+                            comunicarse con ellos y hacerles llegar agua y alimentos.</p>
                     </div>
-                   
+
                     <div class="profundidad animate__animated animate__fadeIn">
-                        <p>Los mineros se encontraban a una profundidad de casi el doble de la altura de la torre Eiffel.</p>
+                        <p>Los mineros se encontraban a una profundidad de casi el doble de la altura de la torre
+                            Eiffel.</p>
                     </div>
                 </div>
                 <div class="imagen-accidente">
@@ -98,23 +106,23 @@
                     </div>
                     <div class="puntos-click-escena-accidente">
                         <div class="click-opcion" id="opcion1-accidente" onclick="menuAccidente(1)">
-    
+
                         </div>
                         <div class="click-opcion" id="opcion2-accidente" onclick="menuAccidente(2)">
-    
+
                         </div>
                         <div class="click-opcion" id="opcion3-accidente" onclick="menuAccidente(3)">
-    
+
                         </div>
                         <div class="click-opcion" id="opcion4-accidente" onclick="menuAccidente(4)">
-    
+
                         </div>
                         <div class="click-opcion" id="opcion5-accidente" onclick="menuAccidente(5)">
-    
+
                         </div>
                     </div>
                 </div>
-               
+
             </div>
             <!-- TODO::Edite aca-->
             <div class="contenedor-escena3">
@@ -138,7 +146,8 @@
                     </div>
                 </div>
                 <div class="zonda-comida">
-                    <img id="imagen-zonda-comida" src="./assets/animaciones/comida.gif" alt="comida" style="height: -webkit-fill-available;">
+                    <img id="imagen-zonda-comida" src="./assets/animaciones/comida.gif" alt="comida"
+                        style="height: -webkit-fill-available;">
                 </div>
                 <div class="puntos-click">
                     <div class="click-opcion" id="opcion1">
@@ -159,7 +168,7 @@
 
             </div>
 
-             <div class="imagenescena-mineros-dormir">
+            <div class="imagenescena-mineros-dormir">
 
             </div>
             <div class="imagenescena-mineros-comer">
@@ -222,21 +231,22 @@
                             </div>
                             <div>
                                 <p>Diseñada por un equipo de 20 ingenieros espaciales en el centro de Investigaciones
-                                langley
-                                de la NASA, en Virginia, EE.UU.</p>
+                                    langley
+                                    de la NASA, en Virginia, EE.UU.</p>
                                 <div>
                                     <div style="width:80%;margin:0px auto">
-                                        <div id="boton-siguiente-rescate" class="button" onclick="siguienteRescateFexi()">
+                                        <div id="boton-siguiente-rescate" class="button"
+                                            onclick="siguienteRescateFexi()">
                                             Siguiente
                                         </div>
                                     </div>
-    
+
                                 </div>
 
                             </div>
 
                         </div>
-                       
+
 
                     </div>
 
