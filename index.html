@@ -23,10 +23,10 @@
     <div style="position: absolute;top: 0px;z-index: 1;">
         <img src="./assets/Img/logo.png" alt="logo: escuela nueva">
     </div>
-    <div id="tituloInteractiva" style="position: absolute;top: -20px;right: 1px;z-index: 1;"
-        class="animate__animated animate__fadeIn">
-        <img src="./assets/img/TituloInteractiva.png" class="responsive" alt="logo: escuela nueva">
-    </div>
+   
+    <div id="tituloInteractiva" style="position: absolute;top: -20px;right: 10px;z-index: 1;"
+    class="animate__animated animate__fadeIn">
+</div>
     <div class="botones-Menu">
         <div class="animate__animated animate__fadeIn" onclick="menuLateral(1)">
 
@@ -58,9 +58,13 @@
 
     </div>
     <div class="contendor-bienvenida">
+    
         <div class="contenido-actividad-bienvenida">
 
             <div class="escena-bienvenida">
+                <div class="bandera-chile">
+
+                </div>
 
                 <div class="contenedor-texto animate__animated animate__fadeInRight animate__delay-1s">
                     <img src="./assets/img/mensaje.png" alt="logo: escuela nueva" class="responsive">
@@ -72,7 +76,7 @@
                 </div>
             </div>
             <div class="escena2">
-                <div>
+                <div class="contendor-textos-escena2">
                     <div class="zona-derrumbe animate__animated animate__fadeIn">
                         <p>El 5 de agosto de 2010, 33 mineros quedaron atrapados a 700 metros de profundidad después de
                             que un derrumbe inutilizables la salida de la mina de San José al norte de Chile.</p>
@@ -274,15 +278,27 @@
                         <p>Lograste sacar a todos los mineros</p>
                         <p><b>Tu Tiempo:</b></p>
                     </div>
+                   
                     <div class="torre-taladro">
 
                     </div>
                     <div class="mineros-top">
 
                     </div>
-                    <div class="mensaje-actividad">
-                        <p>Haz click sobre la polea y comienza a girar para bajar la cápsulta Fénix hasta la mina.</p>
+                    <div>
+                        <div class="mensaje-actividad">
+                            <p>Haz click sobre la polea y comienza a girar para bajar la cápsulta Fénix hasta la mina.</p>
+                            <div id="temporizador">
+                                <div>
+                                    <span id="indicador-tiempo"><b>Tiempo:</b></span><br>
+                                    <h6 style="color:red; font-size:18px">00:00:00</h6>
+        
+                                </div>
+                            </div>
+                        </div>
+                       
                     </div>
+                   
                     <div class="MensajeRescate2">
 
                     </div>
@@ -297,15 +313,10 @@
                             </div>
                         </div>
                     </div>
-                    <div id="temporizador">
-                        <div>
-                            <span id="indicador-tiempo"><b>Tiempo:</b></span><br>
-                            <h6 style="color:red; font-size:18px">00:00:00</h6>
-
-                        </div>
-                    </div>
+                    
                     <div>
                         <div id="wrapper">
+                            
                             <div id="rotate-container">
                                 <div id="rotatable" class="rueda">
                                     <div id="interaction" class="rueda-dragable">
@@ -317,7 +328,7 @@
                         </div>
 
 
-                        <div id="interaction2" style=""></div>
+                        <div id="interaction2"></div>
 
 
                     </div>

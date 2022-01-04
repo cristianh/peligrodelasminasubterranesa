@@ -57,6 +57,8 @@ ol {
   height: auto;
 }
 
+
+
 .responsive-traje {
   width: 80%;
   height: max-content;
@@ -79,8 +81,8 @@ ol {
   align-items: center;
   background: aliceblue;
   width: 55vh;
-  float: right;
-  margin: 15% 15%;
+  float: left;
+  margin: 15% 10%;
   padding: 23px;
   box-shadow: -5px -7px 0px darkolivegreen;
 }
@@ -97,6 +99,19 @@ ol {
   overflow-x: hidden;
   /* background-size: 151%; */
   background-size: 100% 100%;
+}
+
+.bandera-chile{
+  position:absolute;
+  bottom:52vh;
+  right:37.5%;
+  width: 10vw;
+  height: 10vh;
+  background-image: url(./assets/animaciones/superbandera-chile-unscreen.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  transform:rotate(-48deg);
 }
 
 .escena2 {
@@ -292,6 +307,8 @@ ol {
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
+  width:auto;
+  height:20vh
 }
 
 .mensaje-fenix {
@@ -344,9 +361,10 @@ ol {
   align-items: center;
   align-content: center;
   justify-content: center;
-  margin: 0px auto;
-  height:fit-content;
+  margin: 25% auto;
+  height: fit-content;
   text-align: justify;
+  font-size:1.2em
 }
 
 
@@ -371,8 +389,9 @@ ol {
 
 .contenedor-mineros {
   width: 100%;
-  position: relative;
-  top: -319px;
+  position: absolute;
+  bottom: 0px;
+  height: 20vh;
 }
 
 .contenedor-paredes {
@@ -523,7 +542,7 @@ ol {
   position: absolute;
   width: 10%;
   height: var(--animacion-tamano-cuerda2);
-  left: 45%;
+  left: 44.89%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -813,6 +832,8 @@ ol {
   position: absolute;
   top: -18px;
   right: 30%;
+  z-index:9999;
+  pointer-events: none;
   /* background-image: url(./assets/animaciones/comida.gif);
   background-repeat: no-repeat;
   background-position: bottom center;
@@ -1186,7 +1207,7 @@ ol {
   text-align: center;
   background: aliceblue;
   width: 40vw;
-  height: 20vh;
+  height: fit-content;
   box-shadow: -5px -7px 0px darkolivegreen;
   position: relative;
   left: 10%;
@@ -1215,7 +1236,7 @@ ol {
   height: fit-content;
   box-shadow: -5px -7px 0px darkolivegreen;
   position: relative;
-  left: 10%;
+  left: 15%;
   top: 12%;
   padding: 12px 12px;
   display: none
@@ -1486,6 +1507,16 @@ h6 {
 }
 
 
+#tituloInteractiva {
+  display:none;
+  width: 57vw;
+  height: 30vh;
+  background-image: url(./assets/img/TituloInteractiva.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+}
+
 .modal-body {
   padding: 2px 16px;
 }
@@ -1511,7 +1542,12 @@ h6 {
 
   .button {
     padding: 2px 0px;
-    font-size:0.8em
+    font-size: 0.8em
+  }
+
+  .button:hover{
+    padding: 2px 0px;
+    font-size: 0.8em
   }
 
   .comen-mineros {
@@ -1540,7 +1576,7 @@ h6 {
     top: 5%;
     left: 10%;
     width: 28vw !important;
-    height:fit-content
+    height: fit-content
   }
 
   .sondas-animacion {
@@ -1593,30 +1629,31 @@ h6 {
   }
 
   .mensaje-broca-rescate {
-    top:79%
+    top: 79%
   }
 
   #tituloInteractiva {
     top: 1% !important;
-    right: -39% !important;
+    right:-17px !important;
+    background-size: contain
   }
-  
-  .brocagrande{
+
+  .brocagrande {
     top: -41px;
   }
 
   .mensaje-fenix {
-    right:24px
+    right: 24px
   }
 
-  .texto3-mesaje-fenix{
-    margin-top:15%
+  .texto3-mesaje-fenix {
+    margin-top: 3%
   }
 
-  .mensaje-mineros-rescate{
-    height:fit-content;
-    width:39vw;
-    margin-top:12px;
+  .mensaje-mineros-rescate {
+    height: fit-content;
+    width: 39vw;
+    margin-top: 12px;
     right: 10px;
   }
 
@@ -1624,6 +1661,59 @@ h6 {
     width: 60%;
     height: auto;
   }
+
+  .bandera-chile{
+    position:absolute;
+    bottom:38vh;
+  }
+
+  .contendor-textos-escena2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+  }
+
+  .torre-taladro {
+    top:15%;
+    left:44.7%
+  }
+
+  .mineros-top{
+    top:30%;
+    left:45.5%
+  }
+
+  
+#rotatable {
+  width: 70px;
+  height: 70px;
+}
+
+.contenedor-mineros {
+  bottom:-52px
+}
+
+.texto-descripcion{
+  font-size:0.8em;
+  width: 49vh;
+}
+
+.descripcion-minero-rescado{
+ left:72px;
+ height:32vh;
+
+}
+
+.MensajeRescate1{
+  right:34%;
+  top:-34px
+}
+
+.MensajeRescate2{
+  right:34%;
+  top:24%
+}
 
 }
 
@@ -1665,15 +1755,42 @@ h6 {
     right: 30%;
   }
 
-  /*  .sondas-animacion {
-    right: 30%;
-    background-size: contain;
-  } */
+  .sondas-animacion {
+    right: 27.5%;
+  }
 
+  .comen-mineros {
+    width: 30vw;
+    left: 28%;
+  }
+
+  .dormir-mineros {
+    width: 30vw;
+    left: 25%;
+  }
+
+  .temperatura-mineros {
+    width: 30vw;
+    top: 27%;
+    left: 25%;
+    height: fit-content
+  }
 
 
   .puntos-click-escena-accidente {
-    left: 0%
+    left: -12%
+  }
+
+  .texto1-mesaje-fenix {
+    font-size: 0.8em;
+    top: 5%;
+    left: 10%;
+    width: 28vw !important;
+    height: fit-content
+  }
+
+  .puntos-click {
+    left: 35%
   }
 
   #opcion1-accidente {
@@ -1688,6 +1805,9 @@ h6 {
     left: 210px;
   }
 
+  .botones-Menu {
+    bottom:20px
+  }
 
   .contendor-bienvenida {
     height: 100vh;
@@ -1696,13 +1816,113 @@ h6 {
 
   #tituloInteractiva {
     top: 1% !important;
-    right: -39% !important;
+    right:-17px !important;
+    background-size: contain
   }
+
+  .brocagrande {
+    top: -41px;
+  }
+
+  .fenix-descripcion {
+    background-size: 76%;
+  }
+
+  .mensaje-fenix {
+    right: 24px
+  }
+
+  .texto3-mesaje-fenix {
+    margin-top: 5%
+  }
+
+  .mensaje-mineros-rescate {
+    height: fit-content;
+    width: 39vw;
+    margin-top: 12px;
+    right: 10px;
+    z-index:9999
+  }
+
+  .escena2 {
+    grid-template-columns: 1.2fr 2fr;
+  }
+
+  .contendor-textos-escena2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+  }
+
+  .torre-taladro {
+    top:15%;
+    left:44.7%
+  }
+
+  .mineros-top{
+    top:30%;
+    left:45.5%
+  }
+
+  
+#rotatable {
+  width: 70px;
+  height: 70px;
+}
+
+.contenedor-mineros {
+  bottom:-52px
+}
+
+.texto-descripcion{
+  font-size:0.8em;
+  width: 48vh;
+}
+
+.descripcion-minero-rescado{
+ left:65px;
+ font-size:0.8em;
+ height:23vh;
+ width:73vh
+}
+
+.MensajeRescate1{
+  right:34%;
+  top:-34px
+}
+
+.MensajeRescate2{
+  right:34%;
+  top:24%
+}
+.mensaje-actividad{
+  width:80vh;
+  right:30px
+}
+  
 
   .responsive {
     width: 60%;
     height: auto;
   }
+
+  .bandera-chile{
+    position:absolute;
+    bottom:35vh;
+  }
+
+  .button {
+    padding: 2px 0px;
+    font-size: 0.8em
+  }
+
+  .button:hover {
+    padding: 2px 0px;
+    font-size: 0.8em
+  }
+
+
 }
 
 

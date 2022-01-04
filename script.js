@@ -73,7 +73,7 @@ function init() {
         document.querySelector(element).addEventListener('click', mostrarMensaje, false)
     });
 
-
+   /*  cargarJuego() */
 
 }
 
@@ -123,6 +123,7 @@ function menuLateral(opcionMenu) {
 
 function cargarEsenaAccidente(){
     document.querySelector('#tituloInteractiva').style.display='none'
+    document.querySelector('.bandera-chile').style.display='none'
     document.querySelector('.contenido-actividad-bienvenida').style.backgroundImage='none';
     document.querySelector('.contenedor-texto').style.display='none';
     document.querySelector('.botones-Menu').style.display='block';
@@ -233,6 +234,16 @@ function setOutput(data) {
     let cuerda = document.querySelector('.cuerda')
 
     let cuerdaStyle = cuerda.style
+    let limiteInferior;
+
+     let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    /* Revisando  validaciones  para mobile  */
+    if (!isMobile) {
+        limiteInferior=405
+        
+    }else{
+        limiteInferior=230
+    }
 
 
     console.log(data[2][1].replace('°', ''));
@@ -302,7 +313,7 @@ function setOutput(data) {
     if (izquierda) { //limite inferior de la cuerda
 
         if (data[2][1].replace('°', '') < 335) {
-            if (tamanocuerda > 405) {//Limite inferior
+            if (tamanocuerda > limiteInferior) {//Limite inferior
                 if (estadoMensajeRescate) {
                     document.querySelector('#rotatable').style.pointerEvents = 'none'
                     /* region.unbind(target, 'rotate',girarPolea); */
@@ -325,7 +336,7 @@ function setOutput(data) {
         }
 
         if (data[2][1].replace('°', '') > 10 && data[2][1].replace('°', '') < 300) {
-            if (tamanocuerda < 405) {
+            if (tamanocuerda < limiteInferior) {
                 posicioncaja += 1
                 caja.style.top = `${posicioncaja}px`
             }
@@ -432,7 +443,7 @@ function animacionTaladro() {
 
 function reverseAnimacionTaladro() {
     document.querySelector('.brocagrande').style.visibility = 'hidden'
-    document.querySelector('.mensaje-broca-rescate').style.display = 'none'
+    document.querySelector('.mensaje-broca-rescate').style.visibility = 'hidden'
     
 
     document.querySelector('.centro-taladro').style.backgroundImage = "none"
@@ -442,10 +453,11 @@ function reverseAnimacionTaladro() {
     animacionGaspBroca.reverse().eventCallback("onReverseComplete", () => {
         document.querySelector('.centro-taladro').style.backgroundImage = "url('./assets/img/zonda-fenix.svg')"
         document.querySelector('.texto1-mesaje-fenix').style.display = 'flex'
+      
         
     });
     animacionGaspTaladro.addEventListener("transitionend", () => {
-
+        
     });
 
 
@@ -465,6 +477,7 @@ function envirAssistencia() {
 
 function siguienteRescateFexi() {
     document.querySelector('.texto2-mesaje-fenix').style.display = 'none'
+    document.querySelector('.mensaje-broca-rescate').style.display = 'none'
     document.querySelector('.texto3-mesaje-fenix').style.display = 'flex'
 
 }
