@@ -74,42 +74,69 @@ function init() {
     });
 
    /*  cargarJuego() */
+   asignarEventosMenuLateral()
 
 }
 
 
 function cargarJuego() {
     document.querySelector('.mineros-rescate').style.display = 'none'
+    document.querySelector('.botones-Menu').style.display = 'none'
     document.querySelector('.juego').style.display = 'block'
     temporizador = setInterval(ActualizaTiempo, 1000)
     region.bind(target, 'rotate', girarPolea);
+    
+   
+}
+
+function asignarEventosMenuLateral(){
+    let botonesMenuLateral= document.querySelectorAll('.botones-Menu div')
+    
+    botonesMenuLateral.forEach(botonDiv => {
+        botonDiv.addEventListener('click',menuLateral,false);
+        botonDiv.style.pointerEvents='all'
+    });
+}
+
+function removeEventosMenuLateral(){
+    let botonesMenuLateral= document.querySelectorAll('.botones-Menu div')
+    
+    botonesMenuLateral.forEach(botonDiv => {
+        botonDiv.removeEventListener('click',menuLateral,false);
+        botonDiv.style.pointerEvents='none'
+    });
 }
 
 function menuLateral(opcionMenu) {
 
-    switch (opcionMenu) {
-        case 1:
+    console.log(opcionMenu.target.id);
+
+    switch (opcionMenu.target.id) {
+        case 'btn1':
             document.querySelector('.escena2').style.display='grid'
             document.querySelector('.contenedor-escena3').style.display='none'
             document.querySelector('.mineros-rescate').style.display='none'
+            document.querySelector('.imagenescena-mineros-comer').style.display='none'
+            document.querySelector('.imagenescena-mineros-dormir').style.display='none'
             document.querySelector('.dormir-mineros').style.display='none'
             document.querySelector('#tituloInteractiva').style.display='none'
 
             break;
-        case 2:
+        case 'btn2':
             document.querySelector('.escena2').style.display='none'
             document.querySelector('.contenido-actividad-bienvenida').style.backgroundImage='url(./assets/img/fondosupervivencia.png)'
             document.querySelector('.contenedor-escena3').style.display='block'
             document.querySelector('.mineros-rescate').style.display='none'
             document.querySelector('#tituloInteractiva').style.display='none'
             break;
-        case 3:
-            document.querySelector('.escena2').style.display='none'
+        case 'btn3':
+            reiniciarEscenaRescate()
             document.querySelector('.contenedor-escena3').style.display='none'
             document.querySelector('.imagenescena-mineros-dormir').style.display='none'
-            document.querySelector('.mineros-rescate').style.display='block'
+            document.querySelector('.imagenescena-mineros-comer').style.display='none'
             document.querySelector('#tituloInteractiva').style.display='none'
             document.querySelector('.mensaje-mineros-rescate').style.display='block'
+           
         
             
 
@@ -119,6 +146,19 @@ function menuLateral(opcionMenu) {
             break;
     }
 
+}
+
+function reiniciarEscenaRescate(){
+    document.querySelector('.centro-taladro').style.backgroundImage = "url('./assets/img/taladro.svg')"
+    document.querySelector('.centro-taladro').style.height='0px'
+    document.querySelector('.mineros-rescate').style.top='0px'
+    document.querySelector('.mineros-rescate').style.display='block'
+    document.querySelector('.texto1-mesaje-fenix').style.display='none'
+    document.querySelector('.brocagrande').style.display='none'
+    document.querySelector('.mensaje-broca-rescate').style.display='none'
+    document.querySelector('.mensaje-fenix').style.display='none'
+    document.querySelector('.escena2').style.display='none'
+    document.querySelector('.juego').style.display='none'
 }
 
 function cargarEsenaAccidente(){
@@ -402,11 +442,13 @@ function animacionTaladro() {
     let taladro = document.querySelector('.centro-taladro')
     let contenedorMinerosRescate = document.querySelector('.mineros-rescate')
     document.querySelector('.mensaje-mineros-rescate').style.display='none'
+    document.querySelector('.maquina-interna').style.animation='none'
     /*  taladro.style.animation='animatataladro 5s ease-in'
      taladro.style.animationDelay='.4s'
      taladro.style.animationFillMode='forwards' */
      let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (!isMobile) {
+        removeEventosMenuLateral()
         animacionGaspBroca = gsap.to(taladro, {
             height: 1201,
             duration: 5, ease: Linear.easeIn, onComplete: () => {
@@ -418,9 +460,11 @@ function animacionTaladro() {
             duration: 5, ease: Linear.easeIn, onComplete: () => {
                 document.querySelector('.mensaje-broca-rescate').style.display = 'flex'
                 document.querySelector('.brocagrande').addEventListener('click', reverseAnimacionTaladro, false)
+                asignarEventosMenuLateral()
             }
         });
     }else{
+        removeEventosMenuLateral()
         animacionGaspBroca = gsap.to(taladro, {
             height: 1200,
             duration: 6, ease: Linear.easeIn, onComplete: () => {
@@ -429,10 +473,10 @@ function animacionTaladro() {
             }
         });
         animacionGaspTaladro = gsap.to(contenedorMinerosRescate, {
-            top: -1192,
+            top: -1120,
             duration: 6, ease: Linear.easeIn, onComplete: () => {
-                
                 document.querySelector('.brocagrande').addEventListener('click', reverseAnimacionTaladro, false)
+                asignarEventosMenuLateral()
             }
         });
     }
@@ -449,11 +493,12 @@ function reverseAnimacionTaladro() {
     document.querySelector('.centro-taladro').style.backgroundImage = "none"
     document.querySelector('.taladro').style.gridTemplateColumns = '11fr 1fr 11fr';
     document.querySelector('.centro-taladro').style.backgroundImage = "url('./assets/img/taladro2.svg')"
+    removeEventosMenuLateral()
     animacionGaspTaladro.reverse()
     animacionGaspBroca.reverse().eventCallback("onReverseComplete", () => {
         document.querySelector('.centro-taladro').style.backgroundImage = "url('./assets/img/zonda-fenix.svg')"
         document.querySelector('.texto1-mesaje-fenix').style.display = 'flex'
-      
+        asignarEventosMenuLateral()
         
     });
     animacionGaspTaladro.addEventListener("transitionend", () => {
@@ -468,9 +513,11 @@ function reverseAnimacionTaladro() {
 }
 
 function envirAssistencia() {
+    removeEventosMenuLateral()
     document.querySelector('.texto1-mesaje-fenix').style.display = 'none'
     animacionGaspBroca.play().eventCallback("onComplete", () => {
         document.querySelector('.mensaje-fenix').style.display = 'block'
+        asignarEventosMenuLateral()
     });
     animacionGaspTaladro.play()
 }
@@ -519,7 +566,11 @@ function validarFinJuego() {
     if (minerosInfo.length == 0 && minerosJuego.length == 0) {
         document.querySelector('.mensaje-final-juego').style.display = "block"
         document.querySelector('.mensaje-final-juego').innerHTML += contenedortime.innerHTML
-        let boton = `<div style="width:59%;margin:0px auto" onclick="reiniciarJuego()"><div class="button">Volver  Jugar</div></div>`
+        let boton = `
+        <div style="display: grid;place-content: center;align-items:center;grid-template-columns: repeat(2,1fr);align-content:center;width: 87%;margin:0px auto;grid-gap: 19px;">
+        <div class="button" onclick="reiniciarJuego()">Volver  Jugar</div>
+        <div class="button" onclick="reiniciarPresentacion()">Reiniciar Presentación</div>
+        </div>`
         document.querySelector('.mensaje-final-juego').innerHTML += boton
         clearInterval(temporizador)
     }
@@ -531,6 +582,10 @@ function ocultarMensaje() {
     });
 }
 
+
+function verInstruccionesJuego(){
+    MostrarModal()
+}
 
 function reiniciarJuego() {
 
@@ -591,6 +646,10 @@ function reiniciarJuego() {
     cargarJuego()
 }
 
+function reiniciarPresentacion(){
+    window.location.reload()
+}
+
 
 
 // Get the modal
@@ -615,7 +674,7 @@ function ocultarModalVentana(event) {
     }
 }
 
-function MostrarVideo() {
+function MostrarModal() {
     modal.style.display = "flex";
 }
 

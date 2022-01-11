@@ -101,17 +101,17 @@ ol {
   background-size: 100% 100%;
 }
 
-.bandera-chile{
-  position:absolute;
-  bottom:52vh;
-  right:37.5%;
+.bandera-chile {
+  position: absolute;
+  bottom: 52vh;
+  right: 37.5%;
   width: 10vw;
   height: 10vh;
   background-image: url(./assets/animaciones/superbandera-chile-unscreen.gif);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 50%;
-  transform:rotate(-48deg);
+  transform: rotate(-48deg);
 }
 
 .escena2 {
@@ -227,7 +227,8 @@ ol {
   background-size: 100%;
   margin-top: 3%;
   z-index: 99;
-  cursor: pointer
+  cursor: pointer;
+  animation: animacionBrocaGrande 2s infinite
 }
 
 .taladro {
@@ -303,12 +304,12 @@ ol {
   align-items: center;
   text-align: center;
   grid-template-columns: 1/6fr 3fr;
-  background-image: url(./assets/img/montañasfondoCompleto.png);
+  background-image: url(./assets/img/montañasfondoCompleto2.png);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
-  width:auto;
-  height:20vh
+  width: auto;
+  height: 20vh
 }
 
 .mensaje-fenix {
@@ -364,7 +365,7 @@ ol {
   margin: 25% auto;
   height: fit-content;
   text-align: justify;
-  font-size:1.2em
+  font-size: 1.2em
 }
 
 
@@ -502,11 +503,11 @@ ol {
   display: none;
   background-color: white;
   padding: 23px 23px;
-  width: 42vh;
+  width: 67vh;
   height: fit-content;
   position: absolute;
-  top: 30%;
-  left: 40%;
+  top: 29%;
+  left: 32%;
   margin: 0px auto;
   cursor: pointer;
   z-index: 99999;
@@ -612,7 +613,7 @@ ol {
   background-position: center center;
   background-size: contain;
   position: absolute;
-  left: 82vh;
+  left: 44.5%;
   z-index: 9;
   top: 12vh;
   margin: 0px auto;
@@ -709,7 +710,7 @@ ol {
 
 .parte-lazo-polea {
   width: 4px;
-  height: 5vh;
+  height: 11vh;
   background-color: black;
   margin: 0px auto;
 }
@@ -832,7 +833,7 @@ ol {
   position: absolute;
   top: -18px;
   right: 30%;
-  z-index:9999;
+  z-index: 9999;
   pointer-events: none;
   /* background-image: url(./assets/animaciones/comida.gif);
   background-repeat: no-repeat;
@@ -840,8 +841,31 @@ ol {
   background-size: contain */
 }
 
+.mensaje-juego-instrucciones {
+  width: fit-content;
+  height: fit-content;
+  padding: 3px;
+
+  /* position: absolute; */
+  border-radius: 23px;
+  border: 1px solid rgb(91, 168, 91);
+  box-shadow: 5px 7px 0px darkolivegreen;
+  background-color: white;
+}
+
+.juego-intrucciones {
+  width: 40vw;
+  height: 30vh;
+  background-image: url(./assets/animaciones/instrucciones.gif);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain
+}
+
 .mensaje-actividad {
   width: 30%;
+  height: fit-content;
+  padding: 3px;
   position: absolute;
   right: 100px;
   border-radius: 23px;
@@ -970,7 +994,7 @@ ol {
 
 .botones-Menu {
   position: absolute;
-  bottom: 38px;
+  bottom: 22vh;
   left: 1px;
   z-index: 1;
   cursor: pointer;
@@ -1301,23 +1325,23 @@ h6 {
   text-decoration: none;
   text-align: center;
   padding: 6px 0px;
- border:solid 1px #285915; 
+  border: solid 1px #285915;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   font: 18px Arial, Helvetica, sans-serif;
   font-weight: bold;
-  color:#E5FFFF; 
-  background-color:#bdd012; 
-  background-image: -moz-linear-gradient(top, #bdd012 0%, #8cba27 100%); 
-  background-image: -webkit-linear-gradient(top, #bdd012 0%, #8cba27 100%); 
-  background-image: -o-linear-gradient(top, #bdd012 0%, #8cba27 100%); 
-  background-image: -ms-linear-gradient(top, #bdd012 0% ,#8cba27 100%); 
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8cba27', endColorstr='#8cba27',GradientType=0 ); 
-  background-image: linear-gradient(top, #bdd012 0% ,#8cba27 100%);   
-  -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-  -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
-  box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+  color: #E5FFFF;
+  background-color: #bdd012;
+  background-image: -moz-linear-gradient(top, #bdd012 0%, #8cba27 100%);
+  background-image: -webkit-linear-gradient(top, #bdd012 0%, #8cba27 100%);
+  background-image: -o-linear-gradient(top, #bdd012 0%, #8cba27 100%);
+  background-image: -ms-linear-gradient(top, #bdd012 0%, #8cba27 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cba27', endColorstr='#8cba27', GradientType=0);
+  background-image: linear-gradient(top, #bdd012 0%, #8cba27 100%);
+  -webkit-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
   margin: 23px auto;
   cursor: pointer
 }
@@ -1326,23 +1350,23 @@ h6 {
   width: 100%;
   margin: 0px auto;
   padding: 6px 0px;
-  border:solid 1px #285915; 
+  border: solid 1px #285915;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   font: 18px Arial, Helvetica, sans-serif;
   font-weight: bold;
-  color:#E5FFFF; 
-  background-color:#e3ed85; 
-  background-image: -moz-linear-gradient(top, #e3ed85 0%, #bdd012 100%); 
-  background-image: -webkit-linear-gradient(top, #e3ed85 0%, #bdd012 100%); 
-  background-image: -o-linear-gradient(top, #e3ed85 0%, #bdd012 100%); 
-  background-image: -ms-linear-gradient(top, #e3ed85 0% ,#bdd012 100%); 
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdd012', endColorstr='#bdd012',GradientType=0 ); 
-  background-image: linear-gradient(top, #e3ed85 0% ,#bdd012 100%);   
-  -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-  -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
-  box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+  color: #E5FFFF;
+  background-color: #e3ed85;
+  background-image: -moz-linear-gradient(top, #e3ed85 0%, #bdd012 100%);
+  background-image: -webkit-linear-gradient(top, #e3ed85 0%, #bdd012 100%);
+  background-image: -o-linear-gradient(top, #e3ed85 0%, #bdd012 100%);
+  background-image: -ms-linear-gradient(top, #e3ed85 0%, #bdd012 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdd012', endColorstr='#bdd012', GradientType=0);
+  background-image: linear-gradient(top, #e3ed85 0%, #bdd012 100%);
+  -webkit-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+  box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
   margin: 23px auto;
 }
 
@@ -1358,7 +1382,7 @@ h6 {
   display: none;
   position: fixed;
   justify-content: center;
-  z-index: 1;
+  z-index: 999999999999;
   align-content: center;
   align-items: center;
   left: 0;
@@ -1388,6 +1412,7 @@ h6 {
   align-content: center;
   text-align: center;
   flex-direction: column;
+  z-index: 999999999999;
 }
 
 #videoMobile {
@@ -1517,7 +1542,7 @@ h6 {
 
 
 #tituloInteractiva {
-  display:block;
+  display: block;
   width: 57vw;
   height: 30vh;
   background-image: url(./assets/img/TituloInteractiva.png);
@@ -1528,6 +1553,26 @@ h6 {
 
 .modal-body {
   padding: 2px 16px;
+}
+
+
+@media (min-width: 1281px) {
+
+  /* CSS */
+  .torre-taladro {
+    top: 15%;
+    left: 44.5%
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  /* CSS */
+  .torre-taladro {
+    top: 15%;
+    left: 44.5%
+  }
+
 }
 
 
@@ -1554,7 +1599,7 @@ h6 {
     font-size: 0.8em
   }
 
-  .button:hover{
+  .button:hover {
     padding: 2px 0px;
     font-size: 0.8em
   }
@@ -1642,9 +1687,9 @@ h6 {
   }
 
   #tituloInteractiva {
-    top: 1% !important;
-    right:-17px !important;
-    background-size: contain
+    top: -3% !important;
+    right: 2px !important;
+    background-size: contain;
   }
 
   .brocagrande {
@@ -1659,6 +1704,11 @@ h6 {
     margin-top: 3%
   }
 
+
+  .botones-Menu {
+    bottom: 8vh;
+  }
+
   .mensaje-mineros-rescate {
     height: fit-content;
     width: 39vw;
@@ -1671,9 +1721,9 @@ h6 {
     height: auto;
   }
 
-  .bandera-chile{
-    position:absolute;
-    bottom:38vh;
+  .bandera-chile {
+    position: absolute;
+    bottom: 38vh;
   }
 
   .contendor-textos-escena2 {
@@ -1684,45 +1734,45 @@ h6 {
   }
 
   .torre-taladro {
-    top:15%;
-    left:44.7%
+    top: 15%;
+    left: 44.5%
   }
 
-  .mineros-top{
-    top:30%;
-    left:45.5%
+  .mineros-top {
+    top: 30%;
+    left: 45.5%
   }
 
-  
-#rotatable {
-  width: 70px;
-  height: 70px;
-}
 
-.contenedor-mineros {
-  bottom:-52px
-}
+  #rotatable {
+    width: 70px;
+    height: 70px;
+  }
 
-.texto-descripcion{
-  font-size:0.8em;
-  width: 49vh;
-}
+  .contenedor-mineros {
+    bottom: -52px
+  }
 
-.descripcion-minero-rescado{
- left:72px;
- height:32vh;
+  .texto-descripcion {
+    font-size: 0.8em;
+    width: 49vh;
+  }
 
-}
+  .descripcion-minero-rescado {
+    left: 72px;
+    height: 32vh;
 
-.MensajeRescate1{
-  right:34%;
-  top:-34px
-}
+  }
 
-.MensajeRescate2{
-  right:34%;
-  top:24%
-}
+  .MensajeRescate1 {
+    right: 34%;
+    top: -34px
+  }
+
+  .MensajeRescate2 {
+    right: 34%;
+    top: 24%
+  }
 
 }
 
@@ -1815,7 +1865,7 @@ h6 {
   }
 
   .botones-Menu {
-    bottom:20px
+    bottom: 16vh;
   }
 
   .contendor-bienvenida {
@@ -1824,9 +1874,9 @@ h6 {
   }
 
   #tituloInteractiva {
-    top: 1% !important;
-    right:-17px !important;
-    background-size: contain
+    top: -3% !important;
+    right: 2px !important;
+    background-size: contain;
   }
 
   .brocagrande {
@@ -1850,7 +1900,7 @@ h6 {
     width: 39vw;
     margin-top: 12px;
     right: 10px;
-    z-index:9999
+    z-index: 9999
   }
 
   .escena2 {
@@ -1865,60 +1915,61 @@ h6 {
   }
 
   .torre-taladro {
-    top:15%;
-    left:44.7%
+    top: 15%;
+    left: 44.5%
   }
 
-  .mineros-top{
-    top:30%;
-    left:45.5%
+  .mineros-top {
+    top: 30%;
+    left: 45.5%
   }
 
-  
-#rotatable {
-  width: 70px;
-  height: 70px;
-}
 
-.contenedor-mineros {
-  bottom:-52px
-}
+  #rotatable {
+    width: 70px;
+    height: 70px;
+  }
 
-.texto-descripcion{
-  font-size:0.8em;
-  width: 48vh;
-}
+  .contenedor-mineros {
+    bottom: -52px
+  }
 
-.descripcion-minero-rescado{
- left:65px;
- font-size:0.8em;
- height:23vh;
- width:73vh
-}
+  .texto-descripcion {
+    font-size: 0.8em;
+    width: 48vh;
+  }
 
-.MensajeRescate1{
-  right:34%;
-  top:-34px
-}
+  .descripcion-minero-rescado {
+    left: 65px;
+    font-size: 0.8em;
+    height: 23vh;
+    width: 73vh
+  }
 
-.MensajeRescate2{
-  right:34%;
-  top:24%
-}
-.mensaje-actividad{
-  width:80vh;
-  right:30px
-}
-  
+  .MensajeRescate1 {
+    right: 34%;
+    top: -34px
+  }
+
+  .MensajeRescate2 {
+    right: 34%;
+    top: 24%
+  }
+
+  .mensaje-actividad {
+    width: 80vh;
+    right: 30px
+  }
+
 
   .responsive {
     width: 60%;
     height: auto;
   }
 
-  .bandera-chile{
-    position:absolute;
-    bottom:35vh;
+  .bandera-chile {
+    position: absolute;
+    bottom: 35vh;
   }
 
   .button {

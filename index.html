@@ -17,6 +17,22 @@
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    <script>
+		/* you can pass in options here */
+		var PleaseRotateOptions = {
+			startOnPageLoad: true,
+			onHide: function () { },
+			onShow: function () { },
+			forcePortrait: false,
+			message: "Por favor gira el dispositivo para realizar la actividad.",
+			subMessage: "",
+			allowClickBypass: false,
+			onlyMobile: true,
+			zIndex: 9999999,
+			iconNode: null
+		};
+	</script>
+    <script src="./src/pleaserotate.min.js"></script>
 </head>
 
 <body onload="init()">
@@ -28,19 +44,19 @@
     class="animate__animated animate__fadeIn">
 </div>
     <div class="botones-Menu">
-        <div class="animate__animated animate__fadeIn" onclick="menuLateral(1)">
+        <div class="animate__animated animate__fadeIn" id="btn1L" >
 
             <div id="btn1">
 
             </div>
         </div>
-        <div class="animate__animated animate__fadeIn" onclick="menuLateral(2)">
+        <div class="animate__animated animate__fadeIn" id="btn2L" >
 
             <div id="btn2">
 
             </div>
         </div>
-        <div class="animate__animated animate__fadeIn" onclick="menuLateral(3)">
+        <div class="animate__animated animate__fadeIn" id="btn3L" >
 
             <div id="btn3">
 
@@ -52,7 +68,12 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <!--  <span class="close">&times;</span> -->
+            <div class="mensaje-juego-instrucciones">
+                <div class="juego-intrucciones">
+
+                </div>
+               
+            </div>
 
         </div>
 
@@ -279,15 +300,18 @@
                         <p><b>Tu Tiempo:</b></p>
                     </div>
                    
-                    <div class="torre-taladro">
+                   <!--  <div class="torre-taladro">
 
-                    </div>
+                    </div> -->
                     <div class="mineros-top">
 
                     </div>
                     <div>
                         <div class="mensaje-actividad">
                             <p>Haz click sobre la polea y comienza a girar para bajar la cápsulta Fénix hasta la mina.</p>
+                            <div style="display: grid;place-content: center;align-items:center;grid-template-columns: repeat(1,1fr);align-content:center;width: 50%;margin:0px auto;grid-gap: 19px;">
+                                <div class="button" onclick="verInstruccionesJuego()">Ver instrucciones</div>
+                            </div>
                             <div id="temporizador">
                                 <div>
                                     <span id="indicador-tiempo"><b>Tiempo:</b></span><br>
@@ -390,25 +414,11 @@
         </div>
     </div>
 
-    <script>
-		/* you can pass in options here */
-		var PleaseRotateOptions = {
-			startOnPageLoad: true,
-			onHide: function () { },
-			onShow: function () { },
-			forcePortrait: false,
-			message: "Por favor gira el dispositivo para realizar la actividad.",
-			subMessage: "",
-			allowClickBypass: false,
-			onlyMobile: true,
-			zIndex: 9999999,
-			iconNode: null
-		};
-	</script>
+   
 
 
 
-	<script src="./src/pleaserotate.min.js"></script>
+	
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="Draggable.min.js"></script>
 </body>
