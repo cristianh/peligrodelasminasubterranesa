@@ -18,20 +18,20 @@
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
     <script>
-		/* you can pass in options here */
-		var PleaseRotateOptions = {
-			startOnPageLoad: true,
-			onHide: function () { },
-			onShow: function () { },
-			forcePortrait: false,
-			message: "Por favor gira el dispositivo para realizar la actividad.",
-			subMessage: "",
-			allowClickBypass: false,
-			onlyMobile: true,
-			zIndex: 9999999,
-			iconNode: null
-		};
-	</script>
+        /* you can pass in options here */
+        var PleaseRotateOptions = {
+            startOnPageLoad: true,
+            onHide: function () { },
+            onShow: function () { },
+            forcePortrait: false,
+            message: "Por favor gira el dispositivo para realizar la actividad.",
+            subMessage: "",
+            allowClickBypass: false,
+            onlyMobile: true,
+            zIndex: 9999999,
+            iconNode: null
+        };
+    </script>
     <script src="./src/pleaserotate.min.js"></script>
 </head>
 
@@ -39,24 +39,29 @@
     <div style="position: absolute;top: 0px;z-index: 1;">
         <img src="./assets/Img/logo.png" alt="logo: escuela nueva">
     </div>
-   
+    <div class="instrucciones-juego-boton" >
+        <div class="descripcion-actividad-mobile" onclick="verInstruccionesJuego()">
+            <img src="./assets/img/interrogacion.png" class="responsive" style="width:40px">
+        </div>
+    </div>
+
     <div id="tituloInteractiva" style="position: absolute;top: -20px;right: 10px;z-index: 1;"
-    class="animate__animated animate__fadeIn">
-</div>
+        class="animate__animated animate__fadeIn">
+    </div>
     <div class="botones-Menu">
-        <div class="animate__animated animate__fadeIn" id="btn1L" >
+        <div class="animate__animated animate__fadeIn" id="btn1L">
 
             <div id="btn1">
 
             </div>
         </div>
-        <div class="animate__animated animate__fadeIn" id="btn2L" >
+        <div class="animate__animated animate__fadeIn" id="btn2L">
 
             <div id="btn2">
 
             </div>
         </div>
-        <div class="animate__animated animate__fadeIn" id="btn3L" >
+        <div class="animate__animated animate__fadeIn" id="btn3L">
 
             <div id="btn3">
 
@@ -72,14 +77,14 @@
                 <div class="juego-intrucciones">
 
                 </div>
-               
+
             </div>
 
         </div>
 
     </div>
     <div class="contendor-bienvenida">
-    
+
         <div class="contenido-actividad-bienvenida">
 
             <div class="escena-bienvenida">
@@ -299,8 +304,8 @@
                         <p>Lograste sacar a todos los mineros</p>
                         <p><b>Tu Tiempo:</b></p>
                     </div>
-                   
-                   <!--  <div class="torre-taladro">
+
+                    <!--  <div class="torre-taladro">
 
                     </div> -->
                     <div class="mineros-top">
@@ -308,21 +313,22 @@
                     </div>
                     <div>
                         <div class="mensaje-actividad">
-                            <p>Haz click sobre la polea y comienza a girar para bajar la cápsulta Fénix hasta la mina.</p>
-                            <div style="display: grid;place-content: center;align-items:center;grid-template-columns: repeat(1,1fr);align-content:center;width: 50%;margin:0px auto;grid-gap: 19px;">
+                            <p>Haz click sobre la polea y comienza a girar para bajar la cápsulta Fénix hasta la mina.
+                            </p>
+                            <!--  <div style="display: grid;place-content: center;align-items:center;grid-template-columns: repeat(1,1fr);align-content:center;width: 50%;margin:0px auto;grid-gap: 4px;">
                                 <div class="button" onclick="verInstruccionesJuego()">Ver instrucciones</div>
-                            </div>
+                            </div> -->
                             <div id="temporizador">
                                 <div>
                                     <span id="indicador-tiempo"><b>Tiempo:</b></span><br>
                                     <h6 style="color:red; font-size:18px">00:00:00</h6>
-        
+
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
-                   
+
                     <div class="MensajeRescate2">
 
                     </div>
@@ -337,10 +343,10 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div>
                         <div id="wrapper">
-                            
+
                             <div id="rotate-container">
                                 <div id="rotatable" class="rueda">
                                     <div id="interaction" class="rueda-dragable">
@@ -414,11 +420,11 @@
         </div>
     </div>
 
-   
 
 
 
-	
+
+
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="Draggable.min.js"></script>
 </body>

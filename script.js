@@ -80,6 +80,7 @@ function init() {
 
 
 function cargarJuego() {
+    document.querySelector('.instrucciones-juego-boton').style.display = 'block'
     document.querySelector('.mineros-rescate').style.display = 'none'
     document.querySelector('.botones-Menu').style.display = 'none'
     document.querySelector('.juego').style.display = 'block'
@@ -108,8 +109,7 @@ function removeEventosMenuLateral(){
 }
 
 function menuLateral(opcionMenu) {
-
-    console.log(opcionMenu.target.id);
+    document.querySelector('.instrucciones-juego-boton').style.display = 'none'
 
     switch (opcionMenu.target.id) {
         case 'btn1':

@@ -34,6 +34,13 @@ ol {
   pointer-events: none;
 }
 
+.instrucciones-juego-boton{
+  position: absolute
+  ;top: 21px;
+  right:10px;
+  z-index: 1;
+  display:none
+}
 
 .contendor-bienvenida {
   display: flex;
@@ -939,7 +946,8 @@ ol {
   display: inline-block;
   position: relative;
   top: -100%;
-  left: 50%
+  left: 50%;
+  z-index:999999
 }
 
 .puntos-click-escena-accidente {
@@ -1007,8 +1015,8 @@ ol {
   height: 100vh;
   background-image: url(./assets/img/minerosdormir.png);
   background-repeat: no-repeat;
-  background-size: initial;
-  background-position: 89% 67%;
+  background-size: 80%;
+  background-position: 83% 54%;
   position: absolute;
   top: 0px;
   display: none;
@@ -1090,7 +1098,7 @@ ol {
   height: 28vh;
   box-shadow: -5px -7px 0px darkolivegreen;
   position: relative;
-  left: 25%;
+  left: 29%;
   top: 12%;
   padding: 12px 12px;
   display: block;
@@ -1142,7 +1150,7 @@ ol {
   height: fit-content;
   box-shadow: -5px -7px 0px darkolivegreen;
   position: relative;
-  left: 25%;
+  left: 29%;
   top: 12%;
   padding: 12px 12px;
   display: block;
@@ -1184,7 +1192,7 @@ ol {
   height: fit-content;
   box-shadow: -5px -7px 0px darkolivegreen;
   position: relative;
-  left: 25%;
+  left: 29%;
   top: 12%;
   padding: 12px 12px;
   display: block;
@@ -1209,7 +1217,7 @@ ol {
   height: fit-content;
   box-shadow: -5px -7px 0px darkolivegreen;
   position: relative;
-  left: 25%;
+  left: 29%;
   top: 14%;
   padding: 12px 12px;
   display: block;
@@ -1230,11 +1238,11 @@ ol {
 .temperatura-mineros {
   text-align: center;
   background: aliceblue;
-  width: 40vw;
+  width: 30vw;
   height: fit-content;
   box-shadow: -5px -7px 0px darkolivegreen;
   position: relative;
-  left: 10%;
+  left: 19%;
   top: 12%;
   padding: 12px 12px;
   display: none
@@ -1243,11 +1251,11 @@ ol {
 .dormir-mineros {
   text-align: center;
   background: aliceblue;
-  width: 40vw;
+  width: 31vw;
   height: 20vh;
   box-shadow: -5px -7px 0px darkolivegreen;
   position: relative;
-  left: 10%;
+  left: 19%;
   top: 12%;
   padding: 12px 12px;
   display: none
@@ -1260,7 +1268,7 @@ ol {
   height: fit-content;
   box-shadow: -5px -7px 0px darkolivegreen;
   position: relative;
-  left: 15%;
+  left: 19%;
   top: 12%;
   padding: 12px 12px;
   display: none
@@ -1614,6 +1622,8 @@ h6 {
     left: 25%;
   }
 
+  
+
   .temperatura-mineros {
     width: 30vw;
     top: 27%;
@@ -1622,7 +1632,12 @@ h6 {
   }
 
   .puntos-click {
-    left: 43%
+    left: 37%;
+    top: -107vh;
+  }
+
+  .imagenescena-mineros-dormir {
+    background-position: 67% 56%
   }
 
   .texto1-mesaje-fenix {
@@ -1828,6 +1843,9 @@ h6 {
     left: 25%;
   }
 
+
+
+
   .temperatura-mineros {
     width: 30vw;
     top: 27%;
@@ -1849,7 +1867,8 @@ h6 {
   }
 
   .puntos-click {
-    left: 35%
+    left: 39%;
+    top: -12%
   }
 
   #opcion1-accidente {
