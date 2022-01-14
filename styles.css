@@ -39,6 +39,7 @@ ol {
   ;top: 21px;
   right:10px;
   z-index: 1;
+  cursor:pointer;
   display:none
 }
 
